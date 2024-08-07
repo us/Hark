@@ -1,0 +1,111 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Node modules directory
+node_modules/
+
+# Logs
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency directories
+package-lock.json
+yarn.lock
+
+# Compiled source #
+###################
+dist/
+build/
+*.o
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE and editor directories
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swo
+*.swn
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Miscellaneous
+*.tgz
+*.gz
+*.zip
+*.rar
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# npm package and Yarn cache
+*.tgz
+.yarn/
+.pnp.*
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Public assets and build artifacts
+public/
+*.css.map
+*.js.map
+*.map
+
+# Shell scripts
+*.sh
+
+# Ignore editor-specific files
+*.sublime-workspace
+*.sublime-project

@@ -1,0 +1,150 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(
+      circle at 100%,
+      rgba(3, 6, 21, 0.9) 15%,
+      rgba(189, 205, 226, 0.5) 5%,
+      rgba(7, 9, 22, 0.9) 15%
+    ),
+    url('../assets/psy-dis.svg') center/cover;
+  height: 100vh;
+  padding: 40px 0;
+  overflow-y: auto;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 15px;
+}
+
+h1 {
+  color: #fff;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.btn-wrapper {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  border: none;
+  cursor: pointer;
+  padding: 12px 24px;
+  border-radius: 3px;
+  font-weight: 600;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  transition: opacity 400ms ease-in-out;
+}
+
+button:disabled {
+  opacity: 0.47;
+  cursor: default;
+}
+
+button:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+button > svg {
+  height: 1rem;
+}
+
+.result {
+  background-color: #fff;
+  width: 100%;
+  max-height: 400px; /* Set maximum height */
+  min-height: 200px;
+  padding: 10px;
+  border-radius: 3px;
+  margin-top: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-transform: capitalize;
+  overflow-y: auto; /* Enable vertical scrolling */
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+.result:empty {
+  display: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 3.125rem;
+    text-transform: capitalize;
+  }
+
+  .container {
+    padding: 0 30px;
+  }
+
+  .result {
+    padding: 15px;
+  }
+}
+
+.d-flex {
+  display: flex;
+  align-items: stretch;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-fill {
+  flex: 1;
+}
+
+.p-2 {
+  padding: 0.5rem; /* Example padding */
+}
+
+.flex-item {
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0;
+  max-width: 50%; /* Ensures it does not grow beyond 50% of the container's width */
+}
+  
+.hidden {
+  display: none !important;
+}
+
+.form-label {
+  /* display: block;
+  margin-bottom: 5px;
+  font-size: 0.875rem; */
+  color: #ffffff;
+}

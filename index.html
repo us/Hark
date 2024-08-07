@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/public/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/src/css/main.css" />
+  <title>HARK</title>
+</head>
+
+<body>
+  <div class="container mt-7">
+    <h1 class="text-center mb-4">HARK</h1>
+    <div class="d-flex flex-row flex-fill flex-grow ">
+      <div class="p-2 flex-item">
+        <div class="mb-3">
+          <label for="audioDeviceSelect" class="form-label">Audio Device</label>
+          <select id="audioDeviceSelect" class="form-select"></select>
+        </div>
+
+        <div class="btn-wrapper mb-3">
+          <button id="startBtn" class="btn btn-danger btn-start">
+            <svg viewBox="0 0 100 100" class="hidden">
+              <circle cx="50" cy="50" r="40" stroke="#ccc" stroke-width="5" fill="none" />
+              <circle cx="50" cy="50" r="30" stroke="#ccc" stroke-width="5" fill="none">
+                <animate attributeName="r" values="30; 25; 30" dur="1.5s" repeatCount="indefinite" />
+              </circle>
+              <circle cx="50" cy="50" r="5" fill="#ccc" />
+            </svg>
+            <span>Start Recording</span>
+          </button>
+          <button id="stopBtn" class="btn btn-secondary btn-stop" disabled>Stop Recording</button>
+          <button id="clearBtn" class="btn btn-warning btn-clear">Clear</button>
+        </div>
+
+        <div class="mb-3">
+          <label for="languageSelect" class="form-label">Language</label>
+          <select id="languageSelect" class="form-select">
+            <option value="tr-TR">Türkçe (Turkish)</option>
+            <option value="en-US">English (United States)</option>
+            <option value="de-DE">Deutsch (German)</option>
+          </select>
+        </div>
+
+        <div id="result" class="result border p-3 mb-3"></div>
+      </div>
+      <div class="p-2 flex-item">
+        <div class="mb-3">
+          <div class="mb-3">
+            <label for="apiKeyInput" class="form-label">OpenAI API Key</label>
+            <input type="text" id="apiKeyInput" class="form-control" placeholder="Enter your API key" />
+          </div>
+          <div class="mb-3">
+            <label for="modelSelect" class="form-label">Model</label>
+            <select id="modelSelect" class="form-select">
+              <option value="gpt-4o">GPT-4o</option>
+              <option value="gpt-4o-mini" selected>GPT-4o mini</option>
+              <option value="gpt-4-turbo">GPT-4 Turbo</option>
+              <option value="gpt-4">GPT-4</option>
+              <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
+            </select>
+          </div>
+          <label for="wordCountInput" class="form-label">Word Count</label>
+          <input id="wordCountInput" type="number" class="form-control" value="100" min="1" />
+          <div class="d-flex justify-content-between mt-3">
+            <button id="askChatGPTBtn" class="btn btn-info">Answer the Latest Question</button>
+            <button id="summarizeBtn" class="btn btn-success">What's This Meeting About?</button>
+          </div>
+        </div>
+
+        <div id="chatgptResponse" class="result border p-3">
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="/src/js/main.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
