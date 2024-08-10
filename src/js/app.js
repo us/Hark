@@ -15,6 +15,7 @@ const modelSelect = document.getElementById('modelSelect');
 let recognition;
 let fullTranscript = ''; // Store full transcript
 let recognizing = false; // Flag to track recognition state
+let restartTimeout; // Timeout for debouncing recognition restarts
 
 // Load saved state from localStorage
 loadState();
@@ -100,12 +101,13 @@ function setAudioInputDevice(deviceId) {
 
       recognition.onend = function () {
         if (recognizing) {
+          console.log('Speech recognition ended, restarting...');
           restartRecognition();
         } else {
           startBtn.disabled = false;
           stopBtn.disabled = true;
           animatedSvg.classList.add('hidden');
-          console.log('Speech recognition ended');
+          console.log('Speech recognition stopped');
         }
       };
 
@@ -114,10 +116,15 @@ function setAudioInputDevice(deviceId) {
     .catch(err => console.error('Error accessing selected audio input:', err));
 }
 
-// Restart the recognition process
+// Restart the recognition process with a delay to handle pauses
 function restartRecognition() {
-  console.log('Restarting recognition due to silence.');
-  recognition.start();
+  clearTimeout(restartTimeout);
+  restartTimeout = setTimeout(() => {
+    if (recognizing) {
+      console.log('Restarting recognition after pause.');
+      recognition.start();
+    }
+  }, 1000); // 1 second delay before restarting
 }
 
 // Start recording
@@ -130,6 +137,7 @@ function startRecording() {
 // Stop recording
 function stopRecording() {
   recognizing = false;
+  clearTimeout(restartTimeout); // Clear any pending restarts
   if (recognition && typeof recognition.stop === 'function') {
     recognition.stop();
   }
