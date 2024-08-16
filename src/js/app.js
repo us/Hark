@@ -52,7 +52,10 @@ audioDeviceSelect.addEventListener('change', () => {
 function setAudioInputDevice(deviceId) {
   const constraints = {
     audio: {
-      deviceId: deviceId ? { exact: deviceId } : undefined
+      deviceId: deviceId ? { exact: deviceId } : undefined,
+      echoCancellation: true, // Yankı iptali
+      noiseSuppression: true, // Gürültü azaltma
+      autoGainControl: true // Otomatik kazanç kontrolü, ses seviyesini dengelemek için
     }
   };
 
