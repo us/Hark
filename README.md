@@ -56,7 +56,20 @@ To capture system audio on macOS, grab BlackHole—a nifty virtual audio driver.
 
 ### Windows
 
-We’re working on it! If you know of cool free and open-source alternatives, we’d love your input.
+To achieve a similar setup on Windows, use **Voicemeeter**.
+
+1. **Install Voicemeeter**: Download and install [Voicemeeter](https://vb-audio.com/Voicemeeter/).
+
+2. **Configure Voicemeeter**:
+   - Open Voicemeeter.
+   - Set **Hardware Input 1** as your default microphone and send it only to `B`.
+   - Also, send the virtual input to both `A` and `B` (with `A` for hearing through your default speakers and `B` for virtual output).
+   - Set **Hardware Out A1** as your default output, typically your system speakers.
+   - Double-check the Windows sound settings in the system tray to ensure Voicemeeter hasn’t changed your default speaker output. (Keep your sound output as your default device, not voicemeeter!)
+
+3. **Configure Audio in Google Meet and Hark**:
+   - In Google Meet, set the input as your default mic and output as Voicemeeter Input.
+   - In Hark, choose **B1** as the input device.
 
 ## Run the Application
 
